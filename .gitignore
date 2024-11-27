@@ -2,4 +2,4 @@
 
 *.env
 
-App/Core/config.php
+#./App/Core/config.php
