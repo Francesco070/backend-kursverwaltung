@@ -1,0 +1,878 @@
+{
+	"info": {
+		"_postman_id": "4a92d082-4dc1-4e00-b20a-d314337d2b26",
+		"name": "Kursverwaltung",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40044944"
+	},
+	"item": [
+		{
+			"name": "Kurse",
+			"item": [
+				{
+					"name": "GET kurs by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/kurse/1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"kurse",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE kurs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"kursnummer\": \"m294\",\n    \"kursthema\": \"Frontend\",\n    \"inhalt\": \"Modul für Frontend\",\n    \"fk_dozent\": \"1\",\n    \"startdatum\": \"2024-11-20\",\n    \"enddatum\": \"2024-11-21\",\n    \"dauer\": \"30\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/kurse",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"kurse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET kurse",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/kurse",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"kurse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE kurs",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/kurse/4",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"kurse",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE kurs",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"inhalt\": \"Modul für Frontend UPDATE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/kurse/3",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"kurse",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "kurs_lernende",
+			"item": [
+				{
+					"name": "GET kurse_lernende by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/kurse_lernende/1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"kurse_lernende",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE kurse_lernende",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fk_lernende\":\"1\",\n    \"fk_kurs\":\"3\",\n    \"role\":\"king\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/kurse_lernende",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"kurse_lernende"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET kurse_lernende",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/kurse_lernende",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"kurse_lernende"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE kurse_lernende",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/kurse_lernende/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"kurse_lernende",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE kurse_lernende",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\":\"chef\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/kurse_lernende/1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"kurse_lernende",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lehrbetriebe_lernende",
+			"item": [
+				{
+					"name": "GET lehrbetrieb_lernende by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/lehrbetrieb_lernende/1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lehrbetrieb_lernende",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE lehrbetrieb_lernende",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fk_lehrbetrieb\": \"1\",\n    \"fk_lernende\": \"1\",\n    \"start\": \"2024-11-04\",\n    \"ende\": \"2024-11-04\",\n    \"beruf\": \"Informatiker\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/lehrbetrieb_lernende",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lehrbetrieb_lernende"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET lehrbetriebe_lernende",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/lehrbetrieb_lernende",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lehrbetrieb_lernende"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE lehrbetriebe_lernende",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/lehrbetrieb_lernende/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lehrbetrieb_lernende",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE lehrbetriebe_lernende",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"beruf\": \"Gamer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/lehrbetrieb_lernende/3",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lehrbetrieb_lernende",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lehrbetriebe",
+			"item": [
+				{
+					"name": "GET lehrbetriebe by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/lehrbetriebe/1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lehrbetriebe",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE lehrbetriebe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firma\": \"exigo AGGGG\",\n    \"strasse\": \"sägenstrasse 4\",\n    \"plz\": \"7000\",\n    \"ort\": \"Chur\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/lehrbetriebe",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lehrbetriebe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET lehrbetriebe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/lehrbetriebe",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lehrbetriebe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE lehrbetriebe",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/lehrbetriebe/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lehrbetriebe",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE lehrbetriebe",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ort\": \"Bern\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/lehrbetriebe/4",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lehrbetriebe",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lernende",
+			"item": [
+				{
+					"name": "GET lernende by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/lernende/1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lernende",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE lernende",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vorname\": \"Fra\",\r\n    \"nachname\": \"Pal\",\r\n    \"strasse\": \"Scalettasrt. 96\",\r\n    \"plz\": \"7000\",\r\n    \"ort\": \"Chur\",\r\n    \"fk_land\": 1,\r\n    \"geschlecht\": \"m\",\r\n    \"telefon\": \"234324324\",\r\n    \"handy\": \"234234\",\r\n    \"email\": \"2007f.palazzo@gmail.com\",\r\n    \"email_privat\": \"2007f.palazzo@gmail.com\",\r\n    \"birthdate\": \"2024-12-04\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/lernende",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lernende"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET lernende",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/lernende",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lernende"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE lernende",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/lernende/4",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lernende",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE lernende",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"checco.francesco2007@gmail.com\",\r\n    \"email_privat\": \"checco.francesco2007@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/lernende/3",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"lernende",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dozenten",
+			"item": [
+				{
+					"name": "GET dozenten by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/dozenten/1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"dozenten",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE dozenten",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vorname\": \"Fra\",\r\n    \"nachname\": \"Pal\",\r\n    \"strasse\": \"sdfsdf\",\r\n    \"plz\": \"7000\",\r\n    \"ort\": \"Chur\",\r\n    \"fk_land\": \"1\",\r\n    \"geschlecht\": \"m\",\r\n    \"telefon\": \"4456456456\",\r\n    \"handy\": \"45645645\",\r\n    \"email\": \"fghfg@dfgdf.dfg\",\r\n    \"birthdate\": \"2024-12-04\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/dozenten",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"dozenten"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET dozenten",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/dozenten",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"dozenten"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE dozenten",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/dozenten/4",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"dozenten",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE dozenten",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"geschlecht\": \"w\",\r\n    \"telefon\": \"0767021219\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/dozenten/1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"dozenten",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "laender",
+			"item": [
+				{
+					"name": "GET laender by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/laender/1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"laender",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE laender",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"country\": \"DE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/laender",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"laender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET laender",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/laender",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"laender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE laender",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://api.test/laender/3",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"laender",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE laender",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"country\": \"IT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.test/laender/4",
+							"protocol": "http",
+							"host": [
+								"api",
+								"test"
+							],
+							"path": [
+								"laender",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
