@@ -7,8 +7,19 @@ use App\Core\Response;
 $db = DatabaseConnection::getDatabase();
 
 try {
-    // Query to select all kurs_lernende relationships
-    $query = 'SELECT * FROM tbl_kurse_lernende';
+    // Query to join tbl_kurse_lernende, tbl_lernende, and tbl_kurse
+    $query = '
+        SELECT 
+            kl.id_kurs_lernende, 
+            l.vorname, 
+            l.nachname, 
+            k.kursthema, 
+            kl.role
+        FROM tbl_kurse_lernende kl
+        JOIN tbl_lernende l ON kl.fk_lernende = l.id_lernende
+        JOIN tbl_kurse k ON kl.fk_kurs = k.id_kurs
+    ';
+
     $stmt = $db->query($query);
     $stmt->execute();
 

@@ -8,7 +8,9 @@ $db = DatabaseConnection::getDatabase();
 
 try {
     // Query to select all kurse
-    $query = 'SELECT * FROM tbl_kurse';
+    $query = 'SELECT k.id_kurs, k.kursnummer, k.kursthema, k.inhalt, k.startdatum, k.enddatum, k.dauer, CONCAT(d.vorname, " ", d.nachname) AS dozent 
+          FROM tbl_kurse k
+          LEFT JOIN tbl_dozenten d ON k.fk_dozent = d.id_dozent';
     $stmt = $db->query($query);
     $stmt->execute();
 

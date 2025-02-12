@@ -1,5 +1,18 @@
 <?php
 
+// Add CORS headers to allow requests from other origins (modify as needed for production)
+// Allow all origins (wildcard)
+header("Access-Control-Allow-Origin: *");
+// Allow specific methods (GET, POST, PUT, DELETE, OPTIONS)
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+// Allow specific headers (including Authorization)
+header("Access-Control-Allow-Headers: Authorization, Content-Type");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
 use App\Core\Router;
 
 

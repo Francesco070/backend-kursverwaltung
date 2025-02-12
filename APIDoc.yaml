@@ -1,0 +1,671 @@
+openapi: 3.0.3
+info:
+  title: Kursverwaltung
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://api.test
+paths:
+  /kurse/1:
+    get:
+      tags:
+        - Kurse
+      summary: GET kurs by ID
+      description: GET kurs by ID
+      operationId: getKursById
+      responses:
+        '200':
+          description: ''
+  /kurse:
+    get:
+      tags:
+        - Kurse
+      summary: GET kurse
+      description: GET kurse
+      operationId: getKurse
+      requestBody:
+        content:
+          text/plain:
+            example: ''
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - Kurse
+      summary: CREATE kurs
+      description: CREATE kurs
+      operationId: createKurs
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dauer:
+                  type: string
+                  example: '30'
+                enddatum:
+                  type: string
+                  example: '2024-11-21'
+                fk_dozent:
+                  type: string
+                  example: '1'
+                inhalt:
+                  type: string
+                  example: Modul für Frontend
+                kursnummer:
+                  type: string
+                  example: m294
+                kursthema:
+                  type: string
+                  example: Frontend
+                startdatum:
+                  type: string
+                  example: '2024-11-20'
+            example:
+              dauer: '30'
+              enddatum: '2024-11-21'
+              fk_dozent: '1'
+              inhalt: Modul für Frontend
+              kursnummer: m294
+              kursthema: Frontend
+              startdatum: '2024-11-20'
+      responses:
+        '200':
+          description: ''
+  /kurse/4:
+    delete:
+      tags:
+        - Kurse
+      summary: DELETE kurs
+      description: DELETE kurs
+      operationId: deleteKurs
+      requestBody:
+        content:
+          text/plain:
+            example: ''
+      responses:
+        '200':
+          description: ''
+  /kurse/3:
+    put:
+      tags:
+        - Kurse
+      summary: UPDATE kurs
+      description: UPDATE kurs
+      operationId: updateKurs
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                inhalt:
+                  type: string
+                  example: Modul für Frontend UPDATE
+            example:
+              inhalt: Modul für Frontend UPDATE
+      responses:
+        '200':
+          description: ''
+  /kurse_lernende/1:
+    get:
+      tags:
+        - kurs_lernende
+      summary: GET kurse_lernende by ID
+      description: GET kurse_lernende by ID
+      operationId: getKurseLernendeById
+      responses:
+        '200':
+          description: ''
+    put:
+      tags:
+        - kurs_lernende
+      summary: UPDATE kurse_lernende
+      description: UPDATE kurse_lernende
+      operationId: updateKurseLernende
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                role:
+                  type: string
+                  example: chef
+            example:
+              role: chef
+      responses:
+        '200':
+          description: ''
+  /kurse_lernende:
+    get:
+      tags:
+        - kurs_lernende
+      summary: GET kurse_lernende
+      description: GET kurse_lernende
+      operationId: getKurseLernende
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - kurs_lernende
+      summary: CREATE kurse_lernende
+      description: CREATE kurse_lernende
+      operationId: createKurseLernende
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fk_kurs:
+                  type: string
+                  example: '3'
+                fk_lernende:
+                  type: string
+                  example: '1'
+                role:
+                  type: string
+                  example: king
+            example:
+              fk_kurs: '3'
+              fk_lernende: '1'
+              role: king
+      responses:
+        '200':
+          description: ''
+  /kurse_lernende/2:
+    delete:
+      tags:
+        - kurs_lernende
+      summary: DELETE kurse_lernende
+      description: DELETE kurse_lernende
+      operationId: deleteKurseLernende
+      responses:
+        '200':
+          description: ''
+  /lehrbetrieb_lernende/1:
+    get:
+      tags:
+        - lehrbetriebe_lernende
+      summary: GET lehrbetrieb_lernende by ID
+      description: GET lehrbetrieb_lernende by ID
+      operationId: getLehrbetriebLernendeById
+      responses:
+        '200':
+          description: ''
+  /lehrbetrieb_lernende:
+    get:
+      tags:
+        - lehrbetriebe_lernende
+      summary: GET lehrbetriebe_lernende
+      description: GET lehrbetriebe_lernende
+      operationId: getLehrbetriebeLernende
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - lehrbetriebe_lernende
+      summary: CREATE lehrbetrieb_lernende
+      description: CREATE lehrbetrieb_lernende
+      operationId: createLehrbetriebLernende
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                beruf:
+                  type: string
+                  example: Informatiker
+                ende:
+                  type: string
+                  example: '2024-11-04'
+                fk_lehrbetrieb:
+                  type: string
+                  example: '1'
+                fk_lernende:
+                  type: string
+                  example: '1'
+                start:
+                  type: string
+                  example: '2024-11-04'
+            example:
+              beruf: Informatiker
+              ende: '2024-11-04'
+              fk_lehrbetrieb: '1'
+              fk_lernende: '1'
+              start: '2024-11-04'
+      responses:
+        '200':
+          description: ''
+  /lehrbetrieb_lernende/2:
+    delete:
+      tags:
+        - lehrbetriebe_lernende
+      summary: DELETE lehrbetriebe_lernende
+      description: DELETE lehrbetriebe_lernende
+      operationId: deleteLehrbetriebeLernende
+      responses:
+        '200':
+          description: ''
+  /lehrbetrieb_lernende/3:
+    put:
+      tags:
+        - lehrbetriebe_lernende
+      summary: UPDATE lehrbetriebe_lernende
+      description: UPDATE lehrbetriebe_lernende
+      operationId: updateLehrbetriebeLernende
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                beruf:
+                  type: string
+                  example: Gamer
+            example:
+              beruf: Gamer
+      responses:
+        '200':
+          description: ''
+  /lehrbetriebe/1:
+    get:
+      tags:
+        - lehrbetriebe
+      summary: GET lehrbetriebe by ID
+      description: GET lehrbetriebe by ID
+      operationId: getLehrbetriebeById
+      responses:
+        '200':
+          description: ''
+  /lehrbetriebe:
+    get:
+      tags:
+        - lehrbetriebe
+      summary: GET lehrbetriebe
+      description: GET lehrbetriebe
+      operationId: getLehrbetriebe
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - lehrbetriebe
+      summary: CREATE lehrbetriebe
+      description: CREATE lehrbetriebe
+      operationId: createLehrbetriebe
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firma:
+                  type: string
+                  example: exigo AGGGG
+                ort:
+                  type: string
+                  example: Chur
+                plz:
+                  type: string
+                  example: '7000'
+                strasse:
+                  type: string
+                  example: sägenstrasse 4
+            example:
+              firma: exigo AGGGG
+              ort: Chur
+              plz: '7000'
+              strasse: sägenstrasse 4
+      responses:
+        '200':
+          description: ''
+  /lehrbetriebe/2:
+    delete:
+      tags:
+        - lehrbetriebe
+      summary: DELETE lehrbetriebe
+      description: DELETE lehrbetriebe
+      operationId: deleteLehrbetriebe
+      responses:
+        '200':
+          description: ''
+  /lehrbetriebe/4:
+    put:
+      tags:
+        - lehrbetriebe
+      summary: UPDATE lehrbetriebe
+      description: UPDATE lehrbetriebe
+      operationId: updateLehrbetriebe
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ort:
+                  type: string
+                  example: Bern
+            example:
+              ort: Bern
+      responses:
+        '200':
+          description: ''
+  /lernende/1:
+    get:
+      tags:
+        - lernende
+      summary: GET lernende by ID
+      description: GET lernende by ID
+      operationId: getLernendeById
+      responses:
+        '200':
+          description: ''
+  /lernende:
+    get:
+      tags:
+        - lernende
+      summary: GET lernende
+      description: GET lernende
+      operationId: getLernende
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - lernende
+      summary: CREATE lernende
+      description: CREATE lernende
+      operationId: createLernende
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                birthdate:
+                  type: string
+                  example: '2024-12-04'
+                email:
+                  type: string
+                  example: 2007f.palazzo@gmail.com
+                email_privat:
+                  type: string
+                  example: 2007f.palazzo@gmail.com
+                fk_land:
+                  type: number
+                  example: 1
+                geschlecht:
+                  type: string
+                  example: m
+                handy:
+                  type: string
+                  example: '234234'
+                nachname:
+                  type: string
+                  example: Pal
+                ort:
+                  type: string
+                  example: Chur
+                plz:
+                  type: string
+                  example: '7000'
+                strasse:
+                  type: string
+                  example: Scalettasrt. 96
+                telefon:
+                  type: string
+                  example: '234324324'
+                vorname:
+                  type: string
+                  example: Fra
+            example:
+              birthdate: '2024-12-04'
+              email: 2007f.palazzo@gmail.com
+              email_privat: 2007f.palazzo@gmail.com
+              fk_land: 1
+              geschlecht: m
+              handy: '234234'
+              nachname: Pal
+              ort: Chur
+              plz: '7000'
+              strasse: Scalettasrt. 96
+              telefon: '234324324'
+              vorname: Fra
+      responses:
+        '200':
+          description: ''
+  /lernende/4:
+    delete:
+      tags:
+        - lernende
+      summary: DELETE lernende
+      description: DELETE lernende
+      operationId: deleteLernende
+      responses:
+        '200':
+          description: ''
+  /lernende/3:
+    put:
+      tags:
+        - lernende
+      summary: UPDATE lernende
+      description: UPDATE lernende
+      operationId: updateLernende
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: checco.francesco2007@gmail.com
+                email_privat:
+                  type: string
+                  example: checco.francesco2007@gmail.com
+            example:
+              email: checco.francesco2007@gmail.com
+              email_privat: checco.francesco2007@gmail.com
+      responses:
+        '200':
+          description: ''
+  /dozenten/1:
+    get:
+      tags:
+        - dozenten
+      summary: GET dozenten by ID
+      description: GET dozenten by ID
+      operationId: getDozentenById
+      responses:
+        '200':
+          description: ''
+    put:
+      tags:
+        - dozenten
+      summary: UPDATE dozenten
+      description: UPDATE dozenten
+      operationId: updateDozenten
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                geschlecht:
+                  type: string
+                  example: w
+                telefon:
+                  type: string
+                  example: '0767021219'
+            example:
+              geschlecht: w
+              telefon: '0767021219'
+      responses:
+        '200':
+          description: ''
+  /dozenten:
+    get:
+      tags:
+        - dozenten
+      summary: GET dozenten
+      description: GET dozenten
+      operationId: getDozenten
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - dozenten
+      summary: CREATE dozenten
+      description: CREATE dozenten
+      operationId: createDozenten
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                birthdate:
+                  type: string
+                  example: '2024-12-04'
+                email:
+                  type: string
+                  example: fghfg@dfgdf.dfg
+                fk_land:
+                  type: string
+                  example: '1'
+                geschlecht:
+                  type: string
+                  example: m
+                handy:
+                  type: string
+                  example: '45645645'
+                nachname:
+                  type: string
+                  example: Pal
+                ort:
+                  type: string
+                  example: Chur
+                plz:
+                  type: string
+                  example: '7000'
+                strasse:
+                  type: string
+                  example: sdfsdf
+                telefon:
+                  type: string
+                  example: '4456456456'
+                vorname:
+                  type: string
+                  example: Fra
+            example:
+              birthdate: '2024-12-04'
+              email: fghfg@dfgdf.dfg
+              fk_land: '1'
+              geschlecht: m
+              handy: '45645645'
+              nachname: Pal
+              ort: Chur
+              plz: '7000'
+              strasse: sdfsdf
+              telefon: '4456456456'
+              vorname: Fra
+      responses:
+        '200':
+          description: ''
+  /dozenten/4:
+    delete:
+      tags:
+        - dozenten
+      summary: DELETE dozenten
+      description: DELETE dozenten
+      operationId: deleteDozenten
+      responses:
+        '200':
+          description: ''
+  /laender/1:
+    get:
+      tags:
+        - laender
+      summary: GET laender by ID
+      description: GET laender by ID
+      operationId: getLaenderById
+      responses:
+        '200':
+          description: ''
+  /laender:
+    get:
+      tags:
+        - laender
+      summary: GET laender
+      description: GET laender
+      operationId: getLaender
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - laender
+      summary: CREATE laender
+      description: CREATE laender
+      operationId: createLaender
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                country:
+                  type: string
+                  example: DE
+            example:
+              country: DE
+      responses:
+        '200':
+          description: ''
+  /laender/3:
+    delete:
+      tags:
+        - laender
+      summary: DELETE laender
+      description: DELETE laender
+      operationId: deleteLaender
+      responses:
+        '200':
+          description: ''
+  /laender/4:
+    put:
+      tags:
+        - laender
+      summary: UPDATE laender
+      description: UPDATE laender
+      operationId: updateLaender
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                country:
+                  type: string
+                  example: IT
+            example:
+              country: IT
+      responses:
+        '200':
+          description: ''
+tags:
+  - name: Kurse
+  - name: kurs_lernende
+  - name: lehrbetriebe_lernende
+  - name: lehrbetriebe
+  - name: lernende
+  - name: dozenten
+  - name: laender

@@ -7,7 +7,7 @@ use App\Core\Response;
 $db = DatabaseConnection::getDatabase();
 
 try {
-    $query = 'SELECT * FROM tbl_dozenten';
+    $query = 'SELECT id_dozent, vorname, nachname, strasse, plz, ort, geschlecht, telefon, handy, email, birthdate, country FROM tbl_dozenten JOIN tbl_countries ON fk_land = id_countries';
     $stmt = $db->query($query);
     $stmt->execute();
 

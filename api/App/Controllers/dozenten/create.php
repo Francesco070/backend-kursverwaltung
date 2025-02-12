@@ -29,7 +29,10 @@ if (empty($nachname)) $errors['nachname'] = 'Nachname is required.';
 if (empty($strasse)) $errors['strasse'] = 'Strasse is required.';
 if (empty($plz)) $errors['plz'] = 'PLZ is required.';
 if (empty($ort)) $errors['ort'] = 'Ort is required.';
-if (!$fk_land || !ctype_digit($fk_land)) $errors['fk_land'] = 'Valid fk_land is required.';
+//if (!$fk_land || !ctype_digit($fk_land)) $errors['fk_land'] = 'Valid fk_land is required.';
+if (!$fk_land || !ctype_digit((string) $fk_land)) {
+    $errors['fk_land'] = 'Valid fk_land is required.';
+}
 
 if (!empty($errors)) {
     Response::json([
