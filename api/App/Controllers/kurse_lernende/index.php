@@ -11,8 +11,7 @@ try {
     $query = '
         SELECT 
             kl.id_kurs_lernende, 
-            l.vorname, 
-            l.nachname, 
+            CONCAT(l.vorname, \' \', l.nachname) AS lernende, 
             k.kursthema, 
             kl.role
         FROM tbl_kurse_lernende kl

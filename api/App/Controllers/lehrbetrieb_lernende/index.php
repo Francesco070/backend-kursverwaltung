@@ -7,12 +7,11 @@ use App\Core\Response;
 $db = DatabaseConnection::getDatabase();
 
 try {
-    // Query to join tbl_lehrbetrieb_lernende, tbl_lernende, and tbl_lehrbetrieb
+    // Query to join tables and concatenate first and last name as "lernende"
     $query = '
         SELECT 
             ll.id_lehrbetrieb_lernende, 
-            l.vorname, 
-            l.nachname, 
+            CONCAT(l.vorname, " ", l.nachname) AS lernende, 
             lb.firma, 
             ll.start, 
             ll.ende, 
